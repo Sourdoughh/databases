@@ -9,14 +9,8 @@ module.exports = {
     GET: function (req, res) {
       db.sqlGetFromTable('messages');
     }, // a function which produces all the messages
-    POST: function (req, res) {
-      // db.sqlInsertMessage('','')
-      console.log(res);
-      // db.query('INSERT into messages ( username, message ) values ( ' + req.username + ', '+ req.message +' )', function(err, rows, fields){
-      //   if(err){
-      //     console.log('ERROR!');
-      //   }
-      // })
+    POST: function (username, message) {
+      db.sqlInsertMessage(username, message);
     } // a function which can be used to insert a message into the database
   },
 
@@ -26,8 +20,6 @@ module.exports = {
     POST: function () {}
   }
 };
-
-// module.exports.messages.POST();
 
 // TODO:
 // - Write out get and post for the messages and users to db
