@@ -1,5 +1,5 @@
 var express = require('express');
-var db = require('./db');
+var db = require('./db/database');
 // var chatApp = require('../client/scripts/chatapp.js');
 
 // Middleware
