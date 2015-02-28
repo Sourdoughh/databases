@@ -1,5 +1,6 @@
 var express = require('express');
 var db = require('./db');
+// var chatApp = require('../client/scripts/chatapp.js');
 
 // Middleware
 var morgan = require('morgan');
@@ -16,6 +17,7 @@ app.set("port", 3000);
 
 // Logging and parsing
 app.use(morgan('dev'));
+console.log(morgan)
 app.use(parser.json());
 
 // Set up our routes

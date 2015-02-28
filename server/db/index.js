@@ -18,7 +18,15 @@ connection.query('SELECT * from messages', function(err, rows, fields){
     console.log('ERROR!');
   }
 
-  console.log('The message is', rows);
+  // console.log('The message is', rows); //rows is stored as an array of objects
 });
+
+connection.query('INSERT into messages ( username, message ) values ( "michael", "hey there" )', function(err, rows, fields){
+  if(err){
+    console.log('ERROR in INSERT');
+  }
+
+  // console.log('ROWS ', rows, ' FIELDS ', fields);
+} )
 
 connection.end();
