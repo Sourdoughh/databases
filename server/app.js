@@ -17,7 +17,6 @@ app.set("port", 3000);
 
 // Logging and parsing
 app.use(morgan('dev'));
-console.log(morgan)
 app.use(parser.json());
 
 // Set up our routes

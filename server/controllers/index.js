@@ -17,10 +17,3 @@ module.exports = {
     post: function (req, res) {}
   }
 };
-
-
-//get function
-// app.get('/messages', function(req, res){
-//   res.set('Content-Type', 'application/json');
-//   res.send(messages);
-// });
