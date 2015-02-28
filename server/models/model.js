@@ -10,6 +10,7 @@ module.exports = {
       db.sqlGetFromTable('messages');
     }, // a function which produces all the messages
     POST: function (username, message) {
+      console.log('FROM THE MODEL: ', username, message)
       db.sqlInsertMessage(username, message);
     } // a function which can be used to insert a message into the database
   },
