@@ -59,11 +59,14 @@ $(function() {
     },
     fetch: function(animate) {
       $.ajax({
-        url: app.server,
+        url: app.server+ '/classes/messages',
         type: 'GET',
         contentType: 'application/json',
-        data: { order: '-createdAt'},
+        // data: { order: '-createdAt'},
         success: function(data) {
+
+          data = JSON.parse(data);
+
           console.log('chatterbox: Messages fetched');
 
           // Don't bother if we have nothing to work with
@@ -168,7 +171,7 @@ $(function() {
         $timestamp.appendTo($chat);
 
         var $message = $('<br><span/>');
-        $message.text(data.text).appendTo($chat);
+        $message.text(data.message).appendTo($chat);
 
 
         // Add the message to the UI

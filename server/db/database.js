@@ -12,20 +12,16 @@ var connection = mysql.createConnection({
   password: ''
 });
 
-connection.connect();
 
 // build a function that will get messages from a place
 
-exports.sqlGetFromTable = function(table){
+exports.sqlGetFromTable = function(table, callback){
   connection.query('SELECT * FROM ' + table, function(err, rows, fields){
     if (err) console.log('sqlGET ERROR');
-
-    _.each(rows, function(item, index, collection){
-      console.log(item['username'] + ': ' + item['message']);
-    });
-
+// rows['username'] + ': ' + rows['message']
+    // console.log(rows)
+    callback({results: rows});
   });
-  connection.end();
 };
 
 // build a function that will insert to a place
@@ -33,6 +29,5 @@ exports.sqlInsertMessage = function(username, message){
   connection.query("INSERT INTO messages ( username, message ) values ( '"+ username + "', '" + message + "')", function(err, rows, fields){
     if(err) console.log('ERROR in INSERT');
   });
-  connection.end();
 }
 
