@@ -59,7 +59,7 @@ $(function() {
     },
     fetch: function(animate) {
       $.ajax({
-        url: app.server+ '/classes/messages',
+        url: app.server + '/classes/messages',
         type: 'GET',
         contentType: 'application/json',
         // data: { order: '-createdAt'},

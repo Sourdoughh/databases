@@ -5,7 +5,7 @@ var fs = require('fs');
 module.exports = {
   messages: {
     GET: function (req, res) {
-      db.sqlGetFromTable('messages', function(item){
+      db.message('messages', function(item){
         res.writeHead(200);
         res.end(JSON.stringify(item));
       });

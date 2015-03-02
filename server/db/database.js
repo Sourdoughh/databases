@@ -31,3 +31,30 @@ exports.sqlInsertMessage = function(username, message){
   });
 }
 
+//////////////////////////////
+// SEQUELIZE IMPLEMENTATION //
+//////////////////////////////
+
+// var Sequelize = require('sequelize'); //need to require sequelize
+// var sequelize = new Sequelize('chat', 'root', ''); //init a new sequelize object with database, username, password
+
+// var User = sequelize.define('User', { // define the table that needs to be built
+//   username: Sequelize.STRING
+// });
+
+// var Message = sequelize.define('Message', { //define the table that needs to be built
+//   username: Sequelize.STRING,
+//   message: Sequelize.STRING
+// })
+
+// // this part sets up the definitions for the different tables and how they're connected
+// User.hasMany(Message); //a user has many messages
+// Message.belongsTo(User); //a message belongs to a particular user
+
+// // synchronize the data with the database
+// User.sync();
+// Message.sync();
+
+// //export it for use later in the models
+// exports.User = User;
+// exports.Message = Message;
